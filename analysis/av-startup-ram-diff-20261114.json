@@ -1,0 +1,8 @@
+{
+  "capture": "traces/serial-av-startup-20261114T082509334521Z.receiver.ram.bin",
+  "size": 589824,
+  "sha256": "9659eaa59e378b8099ba0a1c922f6d7973f49f45e6ab6eea31baf1ba738cd386",
+  "prepared_sha256": "9659eaa59e378b8099ba0a1c922f6d7973f49f45e6ab6eea31baf1ba738cd386",
+  "changed_bytes": 0,
+  "changed_words": []
+}

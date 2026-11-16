@@ -1,0 +1,64 @@
+{
+  "mode": "fixed-av-startup-with-resident-reader",
+  "status": "prepared; physical capture pending",
+  "code_bytes": 67108,
+  "transport_bytes": 75340,
+  "packet_sha256": "aabc080a63da4a49fe0711a2dcc0a036209f14fe2c8f70e7c918dcb643843a13",
+  "monitor_entry": "0x93f50000",
+  "monitor_wait": "0x93f5000e",
+  "native_images": [
+    {
+      "name": "receiver",
+      "source_sha256": "a41ec193a6665de571332ab23e994fbe9190f0afc54a07dcee62351d80406717",
+      "packed_dram_address": "0x1263f000",
+      "configuration": {
+        "0x100": "0x12633000",
+        "0x104": "0x12651000",
+        "0x108": "0x12678000",
+        "0x10c": "0x0",
+        "0x110": "0x4",
+        "0x170": "0x0",
+        "0x58": "0x1e000"
+      }
+    },
+    {
+      "name": "v393",
+      "source_sha256": "f85906d314851fce79231e22b21d573e4e6400187dc9108662a0c7f4dc71cf5e",
+      "packed_dram_address": "0x12633000",
+      "configuration": {
+        "0x100": "0x12633000",
+        "0x104": "0x12636000",
+        "0x108": "0x1265d000",
+        "0x10c": "0x0",
+        "0x110": "0x4",
+        "0x170": "0x0",
+        "0x58": "0x3000"
+      }
+    }
+  ],
+  "av_dram_window": [
+    "0x12633000",
+    "0x126c3000"
+  ],
+  "capture_bytes_per_image": 589824,
+  "snapshot_buffers": [
+    "0x11000000",
+    "0x11100000"
+  ],
+  "mmio_written": [
+    "0x04200000",
+    "0x04200004",
+    "0x04200100",
+    "0x04200104",
+    "0x04200108",
+    "0x0420010c",
+    "0x04200110",
+    "0x04200160",
+    "0x04200170",
+    "0x04200058",
+    "UART TX"
+  ],
+  "programming_commands_sent": false,
+  "physical_mcu_outcome": "unknown; fixture results are not physical measurements",
+  "loader_context": "Pinned vendor stage-1 includes the previously reviewed OTP-controller configuration +4=1; the custom diagnostic issues no SPI/OTP/GCTL commands."
+}

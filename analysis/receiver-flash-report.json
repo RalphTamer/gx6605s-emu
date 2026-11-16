@@ -1,0 +1,74 @@
+{
+  "source": "traces/serial-flash-dump-20261113T184136405587Z.flash.bin",
+  "size": 4194304,
+  "crc32": "54e97c96",
+  "sha256": "728a722369f5aa5fd3bcd1f81635cf1720b5abeff6a1b898e1da68865853f5a1",
+  "transport_checksum_verified": true,
+  "table_crc32": "5fa826b5",
+  "table_crc_verified": true,
+  "partitions": [
+    {
+      "name": "BOOT",
+      "offset": "0x0",
+      "capacity": 65024,
+      "used": 59140,
+      "flags": "0x800000",
+      "used_region_crc32": "c5db3874"
+    },
+    {
+      "name": "TABLE",
+      "offset": "0xfe00",
+      "capacity": 512,
+      "used": 0,
+      "flags": "0x800100",
+      "used_region_crc32": null
+    },
+    {
+      "name": "KERNEL",
+      "offset": "0x10000",
+      "capacity": 2490368,
+      "used": 2269211,
+      "flags": "0x800200",
+      "used_region_crc32": "08d0f20a"
+    },
+    {
+      "name": "ROOT",
+      "offset": "0x270000",
+      "capacity": 655360,
+      "used": 413696,
+      "flags": "0x2000300",
+      "used_region_crc32": "2d11001d"
+    },
+    {
+      "name": "DATA",
+      "offset": "0x310000",
+      "capacity": 983040,
+      "used": 0,
+      "flags": "0x7f010400",
+      "used_region_crc32": null
+    }
+  ],
+  "firmware_inspection": {
+    "file": "traces/serial-flash-dump-20261113T184136405587Z.flash.bin",
+    "size": 4194304,
+    "sha256": "728a722369f5aa5fd3bcd1f81635cf1720b5abeff6a1b898e1da68865853f5a1",
+    "payload_offset": "0x0",
+    "payload_size": 4194304,
+    "boot_magic": "aa55aa55",
+    "cramfs": [
+      {
+        "offset": "0x270000",
+        "size": 413696,
+        "stored_crc32": "421d8dda",
+        "crc_valid": true
+      }
+    ]
+  },
+  "bootloader_banner": "GxLoader v1.9 20160325 ",
+  "observations": [
+    "BOOT and KERNEL used-region CRCs match the earlier physical startup log.",
+    "ROOT used-region CRC is 2d11001d, differing from boot-log display 0e6e3c89; that display/coverage is unresolved. The CramFS internal CRC is independently valid.",
+    "Application software version remains unconfirmed; this full flash image differs from the V3.93 USB update.",
+    "This is a physical read-only backup; successful emulator startup has not been established."
+  ]
+}

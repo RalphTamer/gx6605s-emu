@@ -1,0 +1,530 @@
+{
+  "physical_state": "AV core stopped after fixed startup trace; read-only resident monitor running. Leave receiver powered on until next loader is armed. No query tool is holding the port.",
+  "monitor_report": "traces/serial-av-startup-20261114T082509334521Z.json",
+  "main_flash": {
+    "file": "traces/serial-flash-dump-20261113T184136405587Z.flash.bin",
+    "size": 4194304,
+    "sha256": "728a722369f5aa5fd3bcd1f81635cf1720b5abeff6a1b898e1da68865853f5a1"
+  },
+  "security_all": {
+    "file": "traces/serial-flash-dump-20261114T013210843939Z.security-all.bin",
+    "size": 3072,
+    "sha256": "57f8b94f77c205280922dbb31285f6a4608e631bd602d375de60b728a9bf83be"
+  },
+  "otp": {
+    "file": "traces/serial-otp-read-20261114T014908884759Z.otp.bin",
+    "size": 2048,
+    "sha256": "00b172e697cdf7afab5cdfaf95e6a7ae7c8c7a95dc08a72883894da5997ed3fc"
+  },
+  "otp_info": "0xd2",
+  "otp_report": "traces/serial-otp-read-20261114T014908884759Z.json",
+  "factory_id_report": "traces/serial-graphics-probe-20261114T005330142437Z.json",
+  "additional_register_reads": [
+    {
+      "address": "0x04e3c8c0",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 3637642866,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-f2-20261114T0200.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c918",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2179027445,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015722487332Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c810",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 3862727134,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015723124111Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c840",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 3796997407,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015723751532Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c958",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 252811422,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015724416295Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c814",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 1912797319,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015725043834Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c8d8",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 3456077686,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015725672664Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3ca44",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 1528655973,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015726300221Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c904",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 3933168977,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015726928149Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c848",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 959325398,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015727564123Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c8d0",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 1910984813,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015728189648Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c960",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2429284171,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015728816129Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3ca78",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 574790675,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015729457433Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3ca20",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2102803862,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015730084990Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3ca74",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 1362940018,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015730712023Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c924",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 1843418641,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015731360802Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3ca1c",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 513608490,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015731985070Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3ca40",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 3643544948,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015732609047Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c9e4",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2146730020,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015733236895Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3ca18",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2133740204,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015733864432Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c8dc",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2927080626,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015734492032Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04e3c87c",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 1287669439,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T015735120300Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04003560",
+      "size": 4,
+      "value": "0x17333f02",
+      "transaction": 3929880662,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T020243434929Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04200018",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2185403198,
+      "crc32_verified": true,
+      "report": "traces/resident-demod-needed-20261114T020244153012Z.json",
+      "imported_as_initial_value": true
+    },
+    {
+      "address": "0x04200160",
+      "size": 4,
+      "value": "0x94d94ace",
+      "transaction": 867281157,
+      "crc32_verified": true,
+      "report": "traces/resident-av-command-20261114T0208.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x04200160",
+      "size": 4,
+      "value": "0x94d94ace",
+      "transaction": 4211227438,
+      "crc32_verified": true,
+      "report": "traces/resident-mailbox-intc-baseline-20261114T0220.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x04200160",
+      "size": 4,
+      "value": "0x94d94ace",
+      "transaction": 1271173189,
+      "crc32_verified": true,
+      "report": "traces/resident-mailbox-intc-baseline-20261114T0220.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x04200160",
+      "size": 4,
+      "value": "0x94d94ace",
+      "transaction": 1650829489,
+      "crc32_verified": true,
+      "report": "traces/resident-mailbox-intc-baseline-20261114T0220.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x04200160",
+      "size": 4,
+      "value": "0x94d94ace",
+      "transaction": 574146399,
+      "crc32_verified": true,
+      "report": "traces/resident-mailbox-intc-baseline-20261114T0220.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x0050009c",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 141624558,
+      "crc32_verified": true,
+      "report": "traces/resident-mailbox-intc-baseline-20261114T0220.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500044",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 4178744407,
+      "crc32_verified": true,
+      "report": "traces/resident-mailbox-intc-baseline-20261114T0220.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500054",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 333640121,
+      "crc32_verified": true,
+      "report": "traces/resident-mailbox-intc-baseline-20261114T0220.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500040",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 2041879906,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500044",
+      "size": 4,
+      "value": "0x00000000",
+      "transaction": 1005262337,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500050",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 797268501,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500054",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 1745755365,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500060",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 2371453030,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500064",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 2389075109,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500068",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 2818923828,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x0050006c",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 3159056006,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500070",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 4160394244,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500074",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 2479662279,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500078",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 199125269,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x0050007c",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 4258285646,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500080",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 3774204866,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500084",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 3917881096,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500088",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 217100167,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x0050008c",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 45878437,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500090",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 1424511707,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500094",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 85676594,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x00500098",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 1230086955,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    },
+    {
+      "address": "0x0050009c",
+      "size": 4,
+      "value": "0xffffffff",
+      "transaction": 845526110,
+      "crc32_verified": true,
+      "report": "traces/resident-intc-config-20261114T0222.json",
+      "imported_as_initial_value": false
+    }
+  ],
+  "additional_register_count": 52,
+  "av_microcode": {
+    "file": "analysis/receiver-av-microcode.bin",
+    "size": 4096,
+    "sha256": "cc07c07596921acc9ea494ffe45a43b0939d10df369b8efdb9c65ad0ab1b7863",
+    "source": "Receiver cold-machine guest RAM 0x104E4080; 2048 halfwords uploaded with indexed writes to 0x04200004. Instruction set not identified."
+  },
+  "limitations": [
+    "Register values measured after pinned RAM bootstrap, not at native-kernel boundaries. Readback/configuration storage is provisional.",
+    "The observed 0x04200160 value is retained only as evidence; it cannot establish command completion after guest writes. Its virtual readback remains blocked.",
+    "IRQ62 routing semantics remain inferred; the combined physical routing experiment timed out.",
+    "Native cold-reset value of OTP configuration +4 was not measured; the functional latch starts enabled following the pinned bootstrap setup. OTP programming is blocked.",
+    "IRQ post-bootstrap configuration: gates zero, masks and SOURCE0..15 FFFFFFFF. Preserved as separate evidence; not promoted to native reset values in the existing functional controller."
+  ],
+  "v393_av_microcode": {
+    "file": "analysis/v393-av-microcode.bin",
+    "size": 4096,
+    "sha256": "9a1631693db0a17addf5faf9ccb9204cfa488f20396238e4d68fd065951a8441",
+    "source": "Native V3.93 upload loop 0x901AA626; source pointer 0x904856e0 from structure 0x905acb10+4; instruction set not identified."
+  },
+  "additional_unique_registers": 45,
+  "av_startup": {
+    "report": "traces/serial-av-startup-20261114T082509334521Z.json",
+    "receiver_result": "mailbox-zero after three polls; full 0x90000-byte DRAM unchanged",
+    "ram_sha256": "9659eaa59e378b8099ba0a1c922f6d7973f49f45e6ab6eea31baf1ba738cd386",
+    "diff": "analysis/av-startup-ram-diff-20261114.json",
+    "v393_result": "warm attempt skipped because initial +18 was 0x8B; no V3.93 execution established",
+    "post_stop_registers": "traces/serial-register-monitor-20261114T083012718413Z.json",
+    "limits": "Stopped +18=8B is not a running-PC timing measurement. Functional bootstrap approximation is opt-in and bounded to exact receiver IRAM, configuration and complete AV RAM.",
+    "experimental_profile": "analysis/gx6605s-receiver-av-bootstrap-profile.json",
+    "fresh_emulator_boot": "traces/receiver-av-bootstrap-cold-20261114.json",
+    "next_kernel_boundary": "0x0420105C=10 at PC 0x90160DCA, 2665677370 instructions; no menu"
+  },
+  "next_capture": {
+    "plan": "analysis/av-startup-v2-trace-plan-20261114.json",
+    "offline_check": "traces/av-startup-v2-probe-offline-20261114.json",
+    "status": "Waiting for user confirmation that DC power is unplugged before arming loader"
+  }
+}

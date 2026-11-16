@@ -1,0 +1,63 @@
+{
+  "source": "SR-4040HD_VEGA_V3.93_14102026.bin",
+  "source_sha256": "10c0962a5f1fef6a5d0313e5e795dd376b9148cc4221696db9c2e99471b4d5b3",
+  "filesystem_offset": "0x296100",
+  "filesystem_size": 405504,
+  "crc_valid": true,
+  "files": [
+    {
+      "path": "etc/.dm",
+      "size": 256,
+      "data_offset": "0x296310",
+      "sha256": "9c51a48204dd135fe6d7da61578f3d02bf4f2b88239d27c7655034310a86074f"
+    },
+    {
+      "path": "etc/.iptv_dm",
+      "size": 256,
+      "data_offset": "0x296420",
+      "sha256": "80736d5dd8af135ed5f8092ca89e40742025f27c53801aa2991f6e9b273ee454"
+    },
+    {
+      "path": "etc/fstab",
+      "size": 53,
+      "data_offset": "0x296530",
+      "sha256": "52eb9f0a1ea02c1fee505d1b3a9802041523afc1ec748c5ad7ec8fd1abff1f51"
+    },
+    {
+      "path": "etc/gx.cfg",
+      "size": 227,
+      "data_offset": "0x296570",
+      "sha256": "d69f2f735622fe3dce9dccd7f8274dac1b7903782d6057b129629f81584148ad"
+    },
+    {
+      "path": "home/audio.mp3",
+      "size": 4092,
+      "data_offset": "0x296608",
+      "sha256": "1a9c23ce5908707cb59f7c4e20433515cd1d2abd7d2e5cf3299b6414468a483a"
+    },
+    {
+      "path": "theme/bmp.bin",
+      "size": 369238,
+      "data_offset": "0x2974f0",
+      "sha256": "dfbf4e7e63376e57abdf2835a6168b99a4b58401cd19c73c2c59beb2278a9cbf"
+    },
+    {
+      "path": "theme/logoinstall.bin",
+      "size": 11751,
+      "data_offset": "0x2efd40",
+      "sha256": "5af18788825120a9213726b79f136f0f8bc90f1708e4fbdbf1f272836e7cb881"
+    },
+    {
+      "path": "theme/logoradio.bin",
+      "size": 11722,
+      "data_offset": "0x2f1a60",
+      "sha256": "b2bfa67671d49f1139ec1e7307410e138365a1e5da01ec7b3311d9aeed8b57b0"
+    },
+    {
+      "path": "theme/logostart.bin",
+      "size": 24981,
+      "data_offset": "0x2f36e4",
+      "sha256": "4d7bbb4c4628e21a01dd9857b32da3397903913ef5535c297379326c1229dc81"
+    }
+  ]
+}

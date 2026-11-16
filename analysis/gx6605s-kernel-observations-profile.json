@@ -1,0 +1,284 @@
+{
+  "name": "gx6605s-receiver-observed",
+  "description": "Receiver observations plus exploratory device models. V3.93 ROMFS decoding verified; kernel/device emulation remains incomplete.",
+  "assumptions": [
+    "Documented GCTL configuration registers start at zero and provide configuration readback; reset values, reset propagation and clock side effects are not verified on the StarSat board.",
+    "DRAM initialization completes immediately after the controller START bit is written; no analog training or timing.",
+    "SPI flash is a read-only virtual NOR populated from the update payload; omitted device data remains erased.",
+    "RTC starts with zeroed configuration and counters, and advances ten virtual microseconds per guest instruction; calendar rollover and alarms are not modeled.",
+    "IRQ/FIQ configuration starts at zero and no external interrupt sources are asserted.",
+    "Infrared receiver starts idle and receives no external remote-control frames.",
+    "A synthetic zero-filled 2 KiB OTP store is exposed through a read-only protocol inferred from the bootloader; real device fuses and secrets are unavailable.",
+    "VPU registers provide configuration storage with assumed zero reset values; no video processing or scan timing. Assumed reads are listed in reports.",
+    "Undocumented GCTL offset 0xA04, accessed by the bootloader, is modeled as zero-initialized configuration storage.",
+    "The read-only auxiliary information word at 0x00F8000C is zero for the synthetic chip; the bootloader extracts bits 11..13 as a configuration selector. This is not a measured receiver value.",
+    "Specifically listed provisional registers provide storage/readback only; their hardware side effects are unmodeled and every use is recorded.",
+    "External GPIO inputs are held high to represent an idle virtual board; actual receiver button/pull levels have not been measured.",
+    "Profile values at 0x040036D4 and 0x04800140..0x048001BC come from the CRC-checked receiver capture serial-register-probe-20261113T185427071506Z. They were measured after a RAM bootstrap, not at the native decoder boundary.",
+    "Using these observations as initial register values and retaining configuration writes is a diagnostic hypothesis. It does not establish register write masks, dynamic readback, or successful firmware decoding.",
+    "Virtual NOR identity is c84016, measured by the CRC-checked physical flash-reader capture.",
+    "Timer register behavior follows the Linux GX6605S driver. The 27 MHz input and 10 virtual microseconds per guest instruction are timing assumptions; IRQ pending is tracked but interrupt delivery is not implemented.",
+    "Preserving firmware writes over the observed VPU baseline yields a checksum-valid V3.93 ROMFS. This validates that decoder path, not every VPU field or native reset value.",
+    "The I2C controller completes synchronously on an empty virtual bus. No tuner or EEPROM is attached; address/data transfers report NACK. I2C timing and interrupt delivery remain unmodeled.",
+    "The sampled demodulator ID bank and 0x04600120 values come from serial-register-probe-20261113T211023311259Z. Using these post-bootstrap observations as native initialization values is provisional; the device identity bytes themselves are not invented."
+  ],
+  "clock_reset": {
+    "0x30a000": "0x0",
+    "0x30a004": "0x0",
+    "0x30a008": "0x0",
+    "0x30a00c": "0x0",
+    "0x30a010": "0x0",
+    "0x30a014": "0x0",
+    "0x30a018": "0x0",
+    "0x30a01c": "0x0",
+    "0x30a020": "0x0",
+    "0x30a024": "0x0",
+    "0x30a028": "0x0",
+    "0x30a02c": "0x0",
+    "0x30a030": "0x0",
+    "0x30a034": "0x0",
+    "0x30a038": "0x0",
+    "0x30a03c": "0x0",
+    "0x30a040": "0x0",
+    "0x30a044": "0x0",
+    "0x30a048": "0x0",
+    "0x30a04c": "0x0",
+    "0x30a050": "0x0",
+    "0x30a054": "0x0",
+    "0x30a058": "0x0",
+    "0x30a05c": "0x0",
+    "0x30a060": "0x0",
+    "0x30a064": "0x0",
+    "0x30a068": "0x0",
+    "0x30a06c": "0x0",
+    "0x30a070": "0x0",
+    "0x30a0c0": "0x0",
+    "0x30a0c8": "0x0",
+    "0x30a0d0": "0x0",
+    "0x30a0e0": "0x0",
+    "0x30a100": "0x0",
+    "0x30a104": "0x0",
+    "0x30a108": "0x0",
+    "0x30a10c": "0x0",
+    "0x30a110": "0x0",
+    "0x30a114": "0x0",
+    "0x30a120": "0x0",
+    "0x30a124": "0x0",
+    "0x30a128": "0x0",
+    "0x30a13c": "0x0",
+    "0x30a140": "0x0",
+    "0x30a144": "0x0",
+    "0x30a148": "0x0",
+    "0x30a164": "0x0",
+    "0x30a170": "0x0",
+    "0x30a174": "0x0",
+    "0x30a178": "0x0",
+    "0x30a17c": "0x0",
+    "0x30a1a0": "0x0",
+    "0x30a1a4": "0x0",
+    "0x30a1c0": "0x0",
+    "0x30a1c4": "0x0",
+    "0x30a1c8": "0x0",
+    "0x30a1d0": "0x0",
+    "0x30a1d4": "0x0",
+    "0x30a1d8": "0x0",
+    "0x30a1e0": "0x0",
+    "0x30a1e4": "0x0",
+    "0x30a1e8": "0x0",
+    "0x30a1f0": "0x0",
+    "0x30a200": "0x0",
+    "0x30a204": "0x0",
+    "0x30a580": "0x0",
+    "0x30a600": "0x0",
+    "0x30aa04": "0x0"
+  },
+  "dram_controller": true,
+  "spi_flash": true,
+  "rtc": true,
+  "interrupt_controller": true,
+  "infrared": true,
+  "otp": true,
+  "video_registers": true,
+  "otp_info": 0,
+  "provisional_registers": {
+    "0x04300000": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x430000c": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300010": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300014": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300018": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x430001c": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300024": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300028": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300040": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x430004c": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300050": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300054": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300058": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x430005c": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300064": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x4300068": {
+      "name": "USB PHY configuration inferred from reset sequence (unmodeled analog effects)",
+      "reset": 0
+    },
+    "0x04804070": {
+      "name": "VOUT configuration word, inferred from boot code",
+      "reset": 0
+    },
+    "0x040036d4": {
+      "name": "Bootloader configuration word; post-RAM-bootstrap observed value, native reset/side effects unverified",
+      "reset": 0
+    },
+    "0x04e3ffc0": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 67372036
+    },
+    "0x04600120": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3ffc4": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 1280068684
+    },
+    "0x04e3ffc8": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 2155905152
+    },
+    "0x04e3ffcc": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 808464432
+    },
+    "0x04e3ffd0": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 774778414
+    },
+    "0x04e3ffd4": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3ffd8": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3ffdc": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3ffe0": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3ffe4": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3ffe8": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3ffec": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3fff0": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3fff4": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    },
+    "0x04e3fff8": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 16843009
+    },
+    "0x04e3fffc": {
+      "name": "CRC-checked post-RAM-bootstrap observation; native readback/side effects not fully modeled",
+      "reset": 0
+    }
+  },
+  "gpio_inputs": 4294967295,
+  "video_reset": {
+    "0x04800140": "0x00000000",
+    "0x04800144": "0x00000000",
+    "0x04800148": "0x00010000",
+    "0x0480014c": "0x80000000",
+    "0x04800150": "0x00000000",
+    "0x04800154": "0x00000000",
+    "0x04800158": "0x00010000",
+    "0x0480015c": "0x00000000",
+    "0x04800160": "0x00000000",
+    "0x04800164": "0x00000000",
+    "0x04800168": "0x00010000",
+    "0x0480016c": "0x00000000",
+    "0x04800170": "0x00000000",
+    "0x04800174": "0x00000000",
+    "0x04800178": "0x00010000",
+    "0x0480017c": "0x00000000",
+    "0x04800180": "0x32110101",
+    "0x04800184": "0x00000000",
+    "0x04800188": "0x00000000",
+    "0x0480018c": "0x00000000",
+    "0x04800190": "0xe3000000",
+    "0x04800194": "0x00000000",
+    "0x04800198": "0x024002d0",
+    "0x0480019c": "0x10001000",
+    "0x048001a0": "0x00000000",
+    "0x048001a4": "0x00000000",
+    "0x048001a8": "0x00408040",
+    "0x048001ac": "0x00000000",
+    "0x048001b0": "0x00000168",
+    "0x048001b4": "0x00000000",
+    "0x048001b8": "0x00000000",
+    "0x048001bc": "0x00000000"
+  },
+  "spi_jedec": "c84016",
+  "timers": true,
+  "timer_input_hz": 27000000,
+  "i2c": true
+}

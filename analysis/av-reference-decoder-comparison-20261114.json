@@ -1,0 +1,822 @@
+{
+  "tool": "GNU binutils objdump 2.42, all targets; temporary reference build only, not bundled with emulator",
+  "source": "https://ftp.gnu.org/gnu/binutils/binutils-2.42.tar.xz",
+  "source_sha256": "f6e4d41fd5fc778b06b7891457b3620da5ecea1006c6a4a41ae998109f85a800",
+  "input": "analysis/receiver-av-microcode.bin",
+  "byte_range": "0..127",
+  "conclusion": "No instruction-set identification established. Ordinary decodings are insufficient; this is a candidate comparison, not proof that the ISA is absent from every supported target.",
+  "candidates": [
+    {
+      "architecture": "cr16",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tstord\t(r1,r0),0x8:s(ra)",
+        "       2:\t20 00 70 e4 \taddd\t$0xe470e190:l,(r1,r0)",
+        "       6:\t90 e1 "
+      ]
+    },
+    {
+      "architecture": "cr16",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tstord\t(r1,r0),0x8:s(ra)",
+        "       2:\t20 00 70 e4 \taddd\t$0xe470e190:l,(r1,r0)",
+        "       6:\t90 e1 "
+      ]
+    },
+    {
+      "architecture": "crx",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tstord\tr4, 0x0(r14)",
+        "       2:\t20 00       \taddub\t$0x2, r0",
+        "       4:\t70 e4       \tstord\tr4, 0x1c(r0)"
+      ]
+    },
+    {
+      "architecture": "crx",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tstord\tr4, 0x0(r14)",
+        "       2:\t20 00       \taddub\t$0x2, r0",
+        "       4:\t70 e4       \tstord\tr4, 0x1c(r0)"
+      ]
+    },
+    {
+      "architecture": "d10v",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tmulxsu\ta0, r14, r4\t||\tsrl\tr0, r0",
+        "       4:\t70 e4 90 e1 \tld\tr14, @r4+\t->\tunknown",
+        "       8:\t70 e4 90 e1 \tld\tr14, @r4+\t->\tunknown"
+      ]
+    },
+    {
+      "architecture": "d10v",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tmulxsu\ta0, r14, r4\t||\tsrl\tr0, r0",
+        "       4:\t70 e4 90 e1 \tld\tr14, @r4+\t->\tunknown",
+        "       8:\t70 e4 90 e1 \tld\tr14, @r4+\t->\tunknown"
+      ]
+    },
+    {
+      "architecture": "d30v",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee42000 70e490e1 \t.long\t0xee42000\t||\t.long\t0x70e490e1",
+        "       8:\t70e490e1 0ee4ff00 \t.long\t0x70e490e1\t||\t.long\t0xee4ff00",
+        "      10:\t70e490e1 0ee4e100 \t.long\t0x70e490e1\t||\t.long\t0xee4e100"
+      ]
+    },
+    {
+      "architecture": "d30v",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee42000 70e490e1 \t.long\t0xee42000\t||\t.long\t0x70e490e1",
+        "       8:\t70e490e1 0ee4ff00 \t.long\t0x70e490e1\t||\t.long\t0xee4ff00",
+        "      10:\t70e490e1 0ee4e100 \t.long\t0x70e490e1\t||\t.long\t0xee4e100"
+      ]
+    },
+    {
+      "architecture": "xstormy16",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tclr1 0xe,#0x2",
+        "       2:\t20 00       \tbr r0",
+        "       4:\t70 e4       \tclr1 0x70,#0x2"
+      ]
+    },
+    {
+      "architecture": "xstormy16",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t*unknown*",
+        "       4:\t70 e4       \tmov.b r4,(r14)",
+        "       6:\t90 e1       \tmov.b 0xe1,r0"
+      ]
+    },
+    {
+      "architecture": "bfin",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tR6 = [P1 + 0x80];",
+        "       4:\t70 e4 90 e1 \tR0 = W[SP + -0x3ce0] (Z);",
+        "       8:\t70 e4 90 e1 \tR0 = W[SP + -0x3ce0] (Z);"
+      ]
+    },
+    {
+      "architecture": "bfin",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tR6 = [P1 + 0x80];",
+        "       4:\t70 e4 90 e1 \tR0 = W[SP + -0x3ce0] (Z);",
+        "       8:\t70 e4 90 e1 \tR0 = W[SP + -0x3ce0] (Z);"
+      ]
+    },
+    {
+      "architecture": "m32r",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tsub r0,r0 || ldi r4,#14",
+        "       4:\t70 e4 90 e1 \tld24 r1,0x90e470",
+        "       8:\t70 e4 90 e1 \tld24 r1,0x90e470"
+      ]
+    },
+    {
+      "architecture": "m32r",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tor lr,r4 -> stb r0,@r0",
+        "       4:\t70 e4 90 e1 \t*unknown* || *unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown* || *unknown*"
+      ]
+    },
+    {
+      "architecture": "m32c",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tsub.b:s #-28,r0l",
+        "       2:\t20 00 70 e4 \tadd.b:q #0,0x2000[a1]",
+        "       6:\t90 e1 70    \tshl.l #112,a1"
+      ]
+    },
+    {
+      "architecture": "m32c",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tsub.b:s #-28,r0l",
+        "       2:\t20 00       \tmov.b:s r0l,0x0[sb]",
+        "       4:\t70 e4       \tcmp.b:s -28[fb],r0l"
+      ]
+    },
+    {
+      "architecture": "mcore",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\te40e      \tbt\t0x1e",
+        "       2:\t0020      \tmvc\tr0",
+        "       4:\te470      \tbt\t0xe6"
+      ]
+    },
+    {
+      "architecture": "mcore",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4      \ttst\tr4, r14",
+        "       2:\t2000      \taddi\tr0, 1",
+        "       4:\t70e4      \tjmpi\t0x29F0723C\t// 0x29f0723c"
+      ]
+    },
+    {
+      "architecture": "csky",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\te40e      \t.long: 0x0000e40e",
+        "       2:\t0020      \tlrw      \tr1, 0x28142a01\t// 0x3fc",
+        "       4:\te470      \t.long: 0x0000e470"
+      ]
+    },
+    {
+      "architecture": "csky",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4      \tbf      \t0xfffffdc8\t// 0xfffffdc8",
+        "       2:\t2000      \taddi      \tr0, 1",
+        "       4:\t70e4      \tlsl      \tr3, r9"
+      ]
+    },
+    {
+      "architecture": "h8300",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \taddx\tr6l,r4h",
+        "       2:\t20 00       \tmov.b\t@0x0:8,r0h",
+        "       4:\t70 e4       \t.word\tH'70,H'e4"
+      ]
+    },
+    {
+      "architecture": "h8300",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \taddx\tr6l,r4h",
+        "       2:\t20 00       \tmov.b\t@0x0:8,r0h",
+        "       4:\t70 e4       \t.word\tH'70,H'e4"
+      ]
+    },
+    {
+      "architecture": "h8500",
+      "endian": "little",
+      "status": 1,
+      "initial_disassembly": []
+    },
+    {
+      "architecture": "h8500",
+      "endian": "big",
+      "status": 1,
+      "initial_disassembly": []
+    },
+    {
+      "architecture": "msp430",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \txor\tr4,\tr14\t;",
+        "       2:\t20 00 70 e4 \tbra\t&58480\t\t;0x0e470",
+        "       6:\t90 e1 70 e4 \txor\t-7056(r1),0xe190\t;0xffffe470, PC rel. 0xe19a"
+      ]
+    },
+    {
+      "architecture": "msp430",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \txor\tr4,\tr14\t;",
+        "       2:\t20 00 70 e4 \tbra\t&58480\t\t;0x0e470",
+        "       6:\t90 e1 70 e4 \txor\t-7056(r1),0xe190\t;0xffffe470, PC rel. 0xe19a"
+      ]
+    },
+    {
+      "architecture": "mn10200",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e          \tmov\td2,(a3)",
+        "       1:\te4 20       \tbcs\t0x23",
+        "       3:\t00          \tmov\td0,(a0)"
+      ]
+    },
+    {
+      "architecture": "mn10200",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e          \tmov\td2,(a3)",
+        "       1:\te4 20       \tbcs\t0x23",
+        "       3:\t00          \tmov\td0,(a0)"
+      ]
+    },
+    {
+      "architecture": "mn10300",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20    \tmovbu\td3,(0x20e4)",
+        "       3:\t00          \tclr\td0",
+        "       4:\t70          \tmov\t(a0),d0"
+      ]
+    },
+    {
+      "architecture": "mn10300",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20    \tmovbu\td3,(0x20e4)",
+        "       3:\t00          \tclr\td0",
+        "       4:\t70          \tmov\t(a0),d0"
+      ]
+    },
+    {
+      "architecture": "score",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0020e40e \tnop! ||",
+        "       4:\te190e470 \tcache\t\t12, [r16, -7056]",
+        "       8:\te190e470 \tcache\t\t12, [r16, -7056]"
+      ]
+    },
+    {
+      "architecture": "score",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4      \tbrcnz!\t\tr14",
+        "       2:\t2000      \tadd!\t\tr0, r0",
+        "       4:\t70e490e1 \tswp!\t\tr0, 112 ||"
+      ]
+    },
+    {
+      "architecture": "pru",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0020e40e \tadd\tr14.b0, fp, r0.b1",
+        "       4:\te190e470 \tsbbo\tr16.b3, fp, 144, 15",
+        "       8:\te190e470 \tsbbo\tr16.b3, fp, 144, 15"
+      ]
+    },
+    {
+      "architecture": "pru",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee42000 \tadd\tr14.b0, fp, r0.b1",
+        "       4:\t70e490e1 \tsbbo\tr16.b3, fp, 144, 15",
+        "       8:\t70e490e1 \tsbbo\tr16.b3, fp, 144, 15"
+      ]
+    },
+    {
+      "architecture": "xtensa",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\te190e4700020e40e \t{ or\ta14, a4, a0; j\t0xfffe4704; srai\ta9, a0, 1 }",
+        "       8:\t90e470               \taddx2\ta14, a4, a7",
+        "       b:\te40ee1               \tl32r\ta14, 0xffff9044"
+      ]
+    },
+    {
+      "architecture": "xtensa",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4200070e490e1 \t{ or\ta14, a4, a0; j\t0xfffe4704; srai\ta9, a0, 1 }",
+        "       8:\t70e490               \taddx2\ta14, a4, a7",
+        "       b:\te10ee4               \tl32r\ta14, 0xffff9044"
+      ]
+    },
+    {
+      "architecture": "avr",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tldi\tr16, 0x4E\t; 78",
+        "       2:\t20 00       \t.word\t0x0020\t; ????",
+        "       4:\t70 e4       \tldi\tr23, 0x40\t; 64"
+      ]
+    },
+    {
+      "architecture": "avr",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tldi\tr16, 0x4E\t; 78",
+        "       2:\t20 00       \t.word\t0x0020\t; ????",
+        "       4:\t70 e4       \tldi\tr23, 0x40\t; 64"
+      ]
+    },
+    {
+      "architecture": "arc",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00             \t.word\t0x0020e40e",
+        "       4:\t70 e4 90 e1             \t.word\t0xe190e470",
+        "       8:\t70 e4 90 e1             \t.word\t0xe190e470"
+      ]
+    },
+    {
+      "architecture": "arc",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00             \t.word\t0x0ee42000",
+        "       4:\t70 e4 90 e1             \t.word\t0x70e490e1",
+        "       8:\t70 e4 90 e1             \t.word\t0x70e490e1"
+      ]
+    },
+    {
+      "architecture": "arc:ARC600",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00             \t.word\t0x0020e40e",
+        "       4:\t70 e4 90 e1             \t.word\t0xe190e470",
+        "       8:\t70 e4 90 e1             \t.word\t0xe190e470"
+      ]
+    },
+    {
+      "architecture": "arc:ARC600",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00             \t.word\t0x0ee42000",
+        "       4:\t70 e4 90 e1             \t.word\t0x70e490e1",
+        "       8:\t70 e4 90 e1             \t.word\t0x70e490e1"
+      ]
+    },
+    {
+      "architecture": "arc:ARC700",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00             \t.word\t0x0020e40e",
+        "       4:\t70 e4 90 e1             \t.word\t0xe190e470",
+        "       8:\t70 e4 90 e1             \t.word\t0xe190e470"
+      ]
+    },
+    {
+      "architecture": "arc:ARC700",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00             \t.word\t0x0ee42000",
+        "       4:\t70 e4 90 e1             \t.word\t0x70e490e1",
+        "       8:\t70 e4 90 e1             \t.word\t0x70e490e1"
+      ]
+    },
+    {
+      "architecture": "rl78",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4                         \tadd\ta, [hl+228]",
+        "       2:\t20 00                         \tsubw\tsp, #0",
+        "       4:\t70                            \tmov\tx, a"
+      ]
+    },
+    {
+      "architecture": "rl78",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4                         \tadd\ta, [hl+228]",
+        "       2:\t20 00                         \tsubw\tsp, #0",
+        "       4:\t70                            \tmov\tx, a"
+      ]
+    },
+    {
+      "architecture": "rx",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e                            \tbra.s\t0x6",
+        "       1:\te4 20 00                      \tmov.l\t[r2], 0[r0]",
+        "       4:\t70 e4 90 e1 70 e4             \tadd\t#0xe470e190, r14, r4"
+      ]
+    },
+    {
+      "architecture": "rx",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e                            \tbra.s\t0x6",
+        "       1:\te4 20 00                      \tmov.l\t[r2], 0[r0]",
+        "       4:\t70 e4 90 e1 70 e4             \tadd\t#0xe470e190, r14, r4"
+      ]
+    },
+    {
+      "architecture": "ft32",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t0020e40e jmpc nz,0x39038",
+        "       4:\t70 e4 90 e1 \te190e470 !",
+        "       8:\t70 e4 90 e1 \te190e470 !"
+      ]
+    },
+    {
+      "architecture": "ft32",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t0020e40e jmpc nz,0x39038",
+        "       4:\t70 e4 90 e1 \te190e470 !",
+        "       8:\t70 e4 90 e1 \te190e470 !"
+      ]
+    },
+    {
+      "architecture": "lm32",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tsrui r0,r1,-7154",
+        "       4:\t70 e4 90 e1 \tbi 0x64391c4",
+        "       8:\t70 e4 90 e1 \tbi 0x64391c8"
+      ]
+    },
+    {
+      "architecture": "lm32",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tsh (r23+8192),r4",
+        "       4:\t70 e4 90 e1 \tcmpgeui r4,r7,0x90e1",
+        "       8:\t70 e4 90 e1 \tcmpgeui r4,r7,0x90e1"
+      ]
+    },
+    {
+      "architecture": "nds32",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t*unknown*",
+        "       4:\t70 e4 90 e1 \t*unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "nds32",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t*unknown*",
+        "       4:\t70 e4 90 e1 \t*unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "tic54x",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "   0:\te40e \tst     a,*ar4+0% || ld     *ar2,t",
+        "   1:\t0020 \tadd    DP+0x20,a",
+        "   2:\te470 \tst     a,*ar2 || ld     *ar5-,t"
+      ]
+    },
+    {
+      "architecture": "tic54x",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "   0:\te40e \tst     a,*ar4+0% || ld     *ar2,t",
+        "   1:\t0020 \tadd    DP+0x20,a",
+        "   2:\te470 \tst     a,*ar2 || ld     *ar5-,t"
+      ]
+    },
+    {
+      "architecture": "tic4x",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "   0:\t0020e40e \tabsf @0xe40e,r0",
+        "   1:\te190e470 \te190e470",
+        "   2:\te190e470 \te190e470"
+      ]
+    },
+    {
+      "architecture": "tic4x",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "   0:\t0020e40e \tabsf @0xe40e,r0",
+        "   1:\te190e470 \te190e470",
+        "   2:\te190e470 \te190e470"
+      ]
+    },
+    {
+      "architecture": "z8k",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4           \text0e\t#0xe4",
+        "       2:\t2000 70e4      \tldb\trh0,#0xe4",
+        "       6:\t90e1           \tcpl\trr1,rr14"
+      ]
+    },
+    {
+      "architecture": "z8k",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4           \text0e\t#0xe4",
+        "       2:\t2000 70e4      \tldb\trh0,#0xe4",
+        "       6:\t90e1           \tcpl\trr1,rr14"
+      ]
+    },
+    {
+      "architecture": "z80",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tld c,0xe4",
+        "       2:\t20 00       \tjr nz,0x0004",
+        "       4:\t70          \tld (hl),b"
+      ]
+    },
+    {
+      "architecture": "z80",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tld c,0xe4",
+        "       2:\t20 00       \tjr nz,0x0004",
+        "       4:\t70          \tld (hl),b"
+      ]
+    },
+    {
+      "architecture": "v850",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tsld.h\t28[ep], r28",
+        "       2:\t20 00       \tnot\tr0, r0",
+        "       4:\t70 e4       \tsld.h\t224[ep], r28"
+      ]
+    },
+    {
+      "architecture": "v850",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tsld.h\t28[ep], r28",
+        "       2:\t20 00       \tnot\tr0, r0",
+        "       4:\t70 e4       \tsld.h\t224[ep], r28"
+      ]
+    },
+    {
+      "architecture": "cris",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4                \taddu.b $sp,$sp",
+        "       2:\t2000                \tbcc 0x24",
+        "       4:\t70e4                \tmovs.w $r0,$sp"
+      ]
+    },
+    {
+      "architecture": "cris",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4                \taddu.b $sp,$sp",
+        "       2:\t2000                \tbcc 0x24",
+        "       4:\t70e4                \tmovs.w $r0,$sp"
+      ]
+    },
+    {
+      "architecture": "iq2000",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tsleep",
+        "       4:\t70 e4 90 e1 \t*unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "iq2000",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t*unknown*",
+        "       4:\t70 e4 90 e1 \tbbi r7(0x4),0xfffe438c",
+        "       8:\t70 e4 90 e1 \tbbi r7(0x4),0xfffe4390"
+      ]
+    },
+    {
+      "architecture": "ip2k",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tjmp $0081c",
+        "       2:\t20 00       \t*unknown*",
+        "       4:\t70 e4       \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "ip2k",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tdec $e4",
+        "       2:\t20 00       \tmov W,(IP)",
+        "       4:\t70 e4       \tloadh #$e4"
+      ]
+    },
+    {
+      "architecture": "moxie",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tbleu\t0x1e",
+        "       2:\t20 00       \tbad",
+        "       4:\t70 e4       \tbleu\t0xe6"
+      ]
+    },
+    {
+      "architecture": "moxie",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \tcmp\t$r12, $r2",
+        "       2:\t20 00 70 e4 \tldi.s\t$fp, 0x70e490e1",
+        "       6:\t90 e1 "
+      ]
+    },
+    {
+      "architecture": "or1k",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t*unknown*",
+        "       4:\t70 e4 90 e1 \t*unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "or1k",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tl.bnf 0xfb908000",
+        "       4:\t70 e4 90 e1 \t*unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "s12z",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tmov.p #-1826816, #-1",
+        "       4:\t70 ",
+        "       5:\te4 90       \tcmp d0, #-112"
+      ]
+    },
+    {
+      "architecture": "s12z",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \tmov.p #-1826816, #-1",
+        "       4:\t70 ",
+        "       5:\te4 90       \tcmp d0, #-112"
+      ]
+    },
+    {
+      "architecture": "xgate",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \t unable to find opcode match #0ee4",
+        "       2:\t20 00       \tbcc *2  Abs* 0x0x4",
+        "       4:\t70 e4       \tstb R0, (R7, R1)"
+      ]
+    },
+    {
+      "architecture": "xgate",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4       \t unable to find opcode match #0ee4",
+        "       2:\t20 00       \tbcc *2  Abs* 0x0x4",
+        "       4:\t70 e4       \tstb R0, (R7, R1)"
+      ]
+    },
+    {
+      "architecture": "mt",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t*unknown*",
+        "       4:\t70 e4 90 e1 \t*unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "mt",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0e e4 20 00 \t*unknown*",
+        "       4:\t70 e4 90 e1 \t*unknown*",
+        "       8:\t70 e4 90 e1 \t*unknown*"
+      ]
+    },
+    {
+      "architecture": "epiphany",
+      "endian": "little",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\te40e      \tasr r7,r1,0x0",
+        "       2:\t0020      \tbgtu 0x2",
+        "       4:\te470      \tbgte 0xffffffcc"
+      ]
+    },
+    {
+      "architecture": "epiphany",
+      "endian": "big",
+      "status": 0,
+      "initial_disassembly": [
+        "       0:\t0ee4 2000 \t*unknown*",
+        "       4:\t70e4      \tldrd r3,[r4,0x1]",
+        "       6:\t90e1      \tldrd r4,[r4,r1]"
+      ]
+    }
+  ]
+}

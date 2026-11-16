@@ -1,0 +1,13 @@
+{
+  "source": "checksum-valid ROMFS decoded by V3.93 guest instructions; captured VPU baseline with firmware writes preserved",
+  "romfs_filename": "ecos.bin.gz",
+  "actual_compression": "LZMA-alone",
+  "compressed_size": 2402573,
+  "compressed_sha256": "4b842a23659af7624094a7bb2cf8bef0f3dd02c59f0fbe69aba6997087072e81",
+  "kernel_size": 5222504,
+  "kernel_sha256": "d9fa9e32daaf57516428d5982f6b7cbd962d312488d08e8693d519f784429eb3",
+  "lzma_stream_complete": true,
+  "kernel_execution_verified": true,
+  "receiver_menu_boot_verified": false,
+  "execution_evidence": "traces/vega-v393-observed-kernel.json (guest executes decompressed kernel through timer setup and reaches I2C initialization)"
+}

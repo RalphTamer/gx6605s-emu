@@ -1,0 +1,36 @@
+{
+  "receiver": {
+    "size": 12288,
+    "source": "0x904e4080",
+    "structure": "0x905d5e60",
+    "sha256": "a41ec193a6665de571332ab23e994fbe9190f0afc54a07dcee62351d80406717",
+    "packed_dram_address": 308539392,
+    "host_configuration": {
+      "0x100": 308490240,
+      "0x104": 308613120,
+      "0x108": 308772864,
+      "0x10c": 0,
+      "0x110": 4,
+      "0x170": 0,
+      "0x58": 122880
+    },
+    "packing": "each group of four halfwords [a,b,c,d] becomes little-endian 32-bit words [(c<<16)|d,(a<<16)|b]"
+  },
+  "v393": {
+    "size": 12288,
+    "source": "0x904856e0",
+    "structure": "0x905acb10",
+    "sha256": "f85906d314851fce79231e22b21d573e4e6400187dc9108662a0c7f4dc71cf5e",
+    "packed_dram_address": 308490240,
+    "host_configuration": {
+      "0x100": 308490240,
+      "0x104": 308502528,
+      "0x108": 308662272,
+      "0x10c": 0,
+      "0x110": 4,
+      "0x170": 0,
+      "0x58": 12288
+    },
+    "packing": "each group of four halfwords [a,b,c,d] becomes little-endian 32-bit words [(c<<16)|d,(a<<16)|b]"
+  }
+}

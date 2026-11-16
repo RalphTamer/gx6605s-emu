@@ -1,0 +1,14 @@
+{
+  "purpose": "Independent cold V3.93 AV bootstrap and status sample before stop",
+  "first_image": "v393",
+  "version": 2,
+  "program_size": 67108,
+  "packet_size": 75340,
+  "packet_sha256": "90961b39130c21d7acf0b4fff4d6da952a86e456c0671468a54b189e16b2cb11",
+  "waiting_pc": "0x93f5000e",
+  "same_write_addresses_as_version_1": true,
+  "new_operations": "Read AV +18 before each final stop, record it in CRC-protected metadata",
+  "physical_state_required": "DC unplugged, display dark; wait for loader armed before reconnecting",
+  "offline_check": "traces/av-startup-v2-probe-offline-20261114.json",
+  "post_capture": "Read-only resident monitor; AV core stopped. No SPI/OTP/GCTL commands in custom program."
+}

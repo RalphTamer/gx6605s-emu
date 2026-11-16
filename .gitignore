@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+traces/
+backups/
+*.bin
+!custom_firmware/
+!custom_firmware/SR-4040HD_VEGA_chip8_console.bin
+*.app/
+*.dylib
+*.pkl
+*.png
+.DS_Store
